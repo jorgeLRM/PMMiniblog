@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<f:view renderKitId="PRIMEFACES_MOBILE" />
+</h:head>
+<body>
+	<h:form>
+		<pm:header>
+			<h2 style="text-align: center">VERSIÓN MOVIL</h2>
+		</pm:header>
+
+		<pm:content>
+			<pm:field>
+				<p:outputLabel for="txtUsuario" value="Usuario" />
+				<p:inputText id="txtUsuario" size="16" required="true" value="#{loginBean.usuario}"
+					requiredMessage="El usuario requerido" />
+			</pm:field>
+
+			<pm:field>
+				<p:outputLabel for="txtClave" value="Clave" />
+				<p:password id="txtClave" size="16" required="true" value="#{loginBean.clave}"
+					requiredMessage="La clave es requerida" />
+			</pm:field>
+
+			<p:commandButton icon="ui-icon-lock" id="btnLogear" action="#{loginBean.login()}"
+				value="Iniciar Sesión" styleClass="ui-btn-b" />
+		</pm:content>
+
+		<pm:footer>
+			<p style="font-size: 11px; text-align: center">Versión Móvil</p>
+			<p style="font-size: 11px; text-align: center">MitoCode Network</p>
+			<p style="font-size: 11px; text-align: center">Copyright ©
+				MitoCode, 2018. Todos los derechos reservados</p>
+		</pm:footer>
+	</h:form>
+</body>
+</html>

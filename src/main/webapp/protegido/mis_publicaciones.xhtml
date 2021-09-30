@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+</h:head>
+<body>
+	<ui:composition template="/WEB-INF/templates/master.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<pm:content>
+					<pm:field>
+						<h2>Publicaciones</h2>
+
+						<h:panelGrid columns="1">
+							<p:repeat value="#{miPublicacionBean.publicaciones}" var="e">
+								<p:panelGrid columns="2" style="width:100%"
+									columnClasses="logo,detail" layout="grid">
+
+									<p:graphicImage value="/imagen/" width="32" height="32" />
+
+
+									<p:outputPanel>
+										<h:panelGrid columns="2" cellpadding="5">
+											<h:outputText value="#{e.cuerpo}" />
+										</h:panelGrid>
+									</p:outputPanel>
+								</p:panelGrid>
+								<hr />
+							</p:repeat>
+						</h:panelGrid>
+
+					</pm:field>
+
+
+				</pm:content>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

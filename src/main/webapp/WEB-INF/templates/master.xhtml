@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>MiniBlog - Versión Móvil</title>
+	<f:event type="preRenderView"
+		listener="#{masterBean.verificarSesion()}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<f:view renderKitId="PRIMEFACES_MOBILE" />
+</h:head>
+
+<body>
+
+	<ui:insert name="header">
+		<pm:header>
+			<h2 style="text-align: center">VERSIÓN MOVIL</h2>
+
+			<h:form>
+				<p:commandButton value="Publicaciones"
+					action="/protegido/mis_publicaciones?faces-redirect=true"
+					ajax="false" />
+				<p:commandButton value="Publicar"
+					action="/protegido/publicaciones?faces-redirect=true" ajax="false" />
+				<p:commandButton value="Roles"
+					action="/protegido/roles?faces-redirect=true" ajax="false" />
+			</h:form>
+		</pm:header>
+	</ui:insert>
+
+
+	<ui:insert name="content">
+
+	</ui:insert>
+
+	<ui:insert name="footer">
+		<pm:footer>
+			<p style="font-size: 11px; text-align: center">Versión Móvil</p>
+			<p style="font-size: 11px; text-align: center">MitoCode Network</p>
+			<p style="font-size: 11px; text-align: center">Copyright ©
+				MitoCode, 2018. Todos los derechos reservados</p>
+		</pm:footer>
+	</ui:insert>
+
+</body>
+
+</html>
